@@ -6,5 +6,5 @@ const site = lume({
 });
 
 site.use(plugins());
-
+site.copy("uploads");
 export default site;

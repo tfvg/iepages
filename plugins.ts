@@ -11,10 +11,12 @@ import sitemap from "lume/plugins/sitemap.ts";
 import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
 import readingInfo from "lume/plugins/reading_info.ts";
 import { merge } from "lume/core/utils/object.ts";
-import toc from "https://deno.land/x/lume_markdown_plugins@v0.7.0/toc.ts";
 import image from "https://deno.land/x/lume_markdown_plugins@v0.7.0/image.ts";
 import footnotes from "https://deno.land/x/lume_markdown_plugins@v0.7.0/footnotes.ts";
 import { alert } from "npm:@mdit/plugin-alert@0.8.0";
+
+import { it } from "npm:date-fns/locale/it";
+const itoptions = { locales: { it }};
 
 import "lume/types.ts";
 
@@ -42,11 +44,10 @@ export const defaults: Options = {
 /** Configure the site */
 export default function (userOptions?: Options) {
   const options = merge(defaults, userOptions);
-
+  options.date = merge(options.date, itoptions);
   return (site: Lume.Site) => {
     site.use(postcss())
       .use(basePath())
-      .use(toc())
       .use(prism(options.prism))
       .use(readingInfo())
       .use(date(options.date))

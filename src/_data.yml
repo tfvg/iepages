@@ -1,16 +1,12 @@
-lang: en
-
+lang: it
 home:
-  welcome: Hello, I am a person that writes stuff.
-
+  welcome: 'Hello, I am a person that writes stuff.'
 menu_links: []
-extra_head: []
-
-# Metas plugin https://lume.land/plugins/metas/#description
 metas:
   site: Blog name
   description: General description of the blog
-  title: "=title"
-  image: "=image"
-  twitter: "@username"
-  lang: en
+  title: =title
+  image: =image
+  twitter: '@username'
+  lang: it
+  generator: false

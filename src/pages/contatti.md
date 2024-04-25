@@ -1,10 +1,9 @@
 ---
 layout: layouts/page.vto
-title: Contact
-url: /contact/
+title: Contatti
+url: /contatti/
 menu:
   visible: true
   order: 2
 ---
-
-Hola
+Per contatti:...
